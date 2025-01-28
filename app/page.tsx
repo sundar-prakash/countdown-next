@@ -1,21 +1,23 @@
 import { Countdown } from "@/app/components/Countdown"
 
 export default function Home() {
-  // Set your launch date here
-  const launchDate = new Date("2025-01-29T00:00:00")
+  // Set your launch date in UTC (make sure it's in UTC)
+  const launchDateUTC = new Date("2025-01-28T11:59:00Z");
+
+  // Convert UTC to IST (India Standard Time is UTC +5:30)
+  const launchDateIST = new Date(launchDateUTC.getTime() + 5.5 * 60 * 60 * 1000);  // Adding 5 hours and 30 minutes
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8">
       <div className="max-w-4xl w-full space-y-8 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">Our Zingbizz Website is Launching Soon</h1>
         <p className="text-xl sm:text-2xl text-gray-300">Reloaded !! Get ready to revolutionize your business operations</p>
-        <Countdown targetDate={launchDate} />
+        <Countdown targetDate={launchDateIST} />
         <div className="space-y-4">
           <p className="text-lg">
             Be among the first to experience our cutting-edge solutions designed to streamline your workflows and boost
             productivity.
           </p>
-         
         </div>
         <div className="pt-8 border-t border-white border-opacity-20">
           <h2 className="text-2xl font-semibold mb-4">Why Choose Our Platform?</h2>
@@ -74,4 +76,3 @@ export default function Home() {
     </main>
   )
 }
-

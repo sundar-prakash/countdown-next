@@ -2,7 +2,7 @@ import { Countdown } from "@/app/components/Countdown"
 
 export default function Home() {
   // Set your launch date in UTC (make sure it's in UTC)
-  const launchDateUTC = new Date("2025-01-28T12:59:00Z");
+  const launchDateUTC = new Date('2025-01-29T11:30:00');
 
   // Convert UTC to IST (India Standard Time is UTC +5:30)
   const launchDateIST = new Date(launchDateUTC.getTime() + 5.5 * 60 * 60 * 1000);  // Adding 5 hours and 30 minutes

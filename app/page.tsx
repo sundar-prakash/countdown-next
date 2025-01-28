@@ -2,7 +2,7 @@ import { Countdown } from "@/app/components/Countdown"
 
 export default function Home() {
   // Set your launch date in UTC (make sure it's in UTC)
-  const launchDateUTC = new Date('2025-01-29T17:00:00');
+  const launchDateUTC = new Date('2025-01-29T17:00:00.000+05:30');
 
 
   return (
